@@ -35,28 +35,28 @@ __starts with / (slash) or ! (exclamation mark)__
 /current  show current playing time of current track
 /repo  show git repository of the userbot
 `!help`  show help for commands
-
+Credits - @Rishi2OP
 
 {emoji.LABEL}  **Admin Commands**:
 __available to userbot account itself and its contacts__
 __starts with ! (exclamation mark)__
 
-`!skip` [n] ...  skip current or n where n >= 2
-`!join`  join voice chat of current group
+`!skip` [n] ...  skip randirona current or n where n >= 2
+`!join`  join randirona voice chat of current group
 `!leave`  leave current voice chat
 `!vc`  check which VC is joined
 `!stop`  stop playing
-`!replay`  play from the beginning
+`!replay`  play randirona from the beginning
 `!clean`  remove unused RAW PCM files
-`!pause` pause playing
-`!resume` resume playing
-`!mute`  mute the VC userbot
-`!unmute`  unmute the VC userbot
+`!pause` randirona pause playing
+`!resume` randirona resume playing
+`!mute`  randirona mute the VC userbot
+`!unmute`  randirona unmute the VC userbot
 """
 
 USERBOT_REPO = f"""{emoji.ROBOT} **Telegram Voice Chat UserBot**
 
-- Repository: [GitHub](https://github.com/callsmusic/tgvc-userbot)
+- Repository: [GitHub](https://github.com/RYZENOP-gf/tgvc-userbot)
 - License: AGPL-3.0-or-later"""
 
 
@@ -134,15 +134,15 @@ mp = MusicPlayer()
 async def network_status_changed_handler(gc: GroupCall, is_connected: bool):
     if is_connected:
         mp.chat_id = int("-100" + str(gc.full_chat.id))
-        await send_text(f"{emoji.CHECK_MARK_BUTTON} joined the voice chat")
+        await send_text(f"{emoji.CHECK_MARK_BUTTON} raper join the voice chat")
     else:
-        await send_text(f"{emoji.CROSS_MARK_BUTTON} left the voice chat")
+        await send_text(f"{emoji.CROSS_MARK_BUTTON} raper left the voice chat")
         mp.chat_id = None
 
 
 @mp.group_call.on_playout_ended
 async def playout_ended_handler(group_call, filename):
-    await skip_current_playing()
+    await skip_current_randirona()
 
 
 # - Pyrogram handlers
@@ -193,7 +193,7 @@ async def play_track(client, m: Message):
         )
         await mp.update_start_time()
         await m_status.delete()
-        print(f"- START PLAYING: {playlist[0].audio.title}")
+        print(f"- START Randirona: {playlist[0].audio.title}")
     await mp.send_playlist()
     for track in playlist[:2]:
         await download_audio(track)
@@ -268,7 +268,7 @@ async def join_group_call(client, m: Message):
     group_call = mp.group_call
     group_call.client = client
     if group_call.is_connected:
-        await m.reply_text(f"{emoji.ROBOT} already joined a voice chat")
+        await m.reply_text(f"{emoji.ROBOT} raper already doing randirona on voice chat")
         return
     await group_call.start(m.chat.id)
     await m.delete()
@@ -329,7 +329,7 @@ async def restart_playing(_, m: Message):
     await mp.update_start_time()
     reply = await m.reply_text(
         f"{emoji.COUNTERCLOCKWISE_ARROWS_BUTTON}  "
-        "playing from the beginning..."
+        "randirona playing from the beginning..."
     )
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
@@ -353,7 +353,7 @@ async def pause_playing(_, m: Message):
                    & filters.regex("^!resume"))
 async def resume_playing(_, m: Message):
     mp.group_call.resume_playout()
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} resumed",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} randirona resumed",
                                quote=False)
     if mp.msg.get('pause') is not None:
         await mp.msg['pause'].delete()
@@ -389,7 +389,7 @@ async def clean_raw_pcm(client, m: Message):
 async def mute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(True)
-    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} muted")
+    reply = await m.reply_text(f"{emoji.MUTED_SPEAKER} randirona muted")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -400,7 +400,7 @@ async def mute(_, m: Message):
 async def unmute(_, m: Message):
     group_call = mp.group_call
     group_call.set_is_mute(False)
-    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} unmuted")
+    reply = await m.reply_text(f"{emoji.SPEAKER_MEDIUM_VOLUME} randirona unmuted")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
