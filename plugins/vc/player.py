@@ -300,7 +300,7 @@ async def list_voice_chat(client, m: Message):
         )
     else:
         reply = await m.reply_text(emoji.NO_ENTRY
-                                   + "didn't join any voice chat yet")
+                                   + "didn'join vc becuz ramdi ki maa chod gayi")
     await _delay_delete_messages((reply, m), DELETE_DELAY)
 
 
@@ -311,7 +311,7 @@ async def list_voice_chat(client, m: Message):
 async def stop_playing(_, m: Message):
     group_call = mp.group_call
     group_call.stop_playout()
-    reply = await m.reply_text(f"{emoji.STOP_BUTTON} stopped playing")
+    reply = await m.reply_text(f"{emoji.STOP_BUTTON} randirona stopping")
     await mp.update_start_time(reset=True)
     mp.playlist.clear()
     await _delay_delete_messages((reply, m), DELETE_DELAY)
@@ -341,7 +341,7 @@ async def restart_playing(_, m: Message):
 async def pause_playing(_, m: Message):
     mp.group_call.pause_playout()
     await mp.update_start_time(reset=True)
-    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} paused",
+    reply = await m.reply_text(f"{emoji.PLAY_OR_PAUSE_BUTTON} 2min rukja",
                                quote=False)
     mp.msg['pause'] = reply
     await m.delete()
