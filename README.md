@@ -14,7 +14,7 @@ It's recommended to use [tgmusicbot](https://github.com/RYZENOP-gf/tgvc-userbot)
 
 ## Deploy to Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/callsmusic/tgvc-userbot/tree/dev)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/theshashankk/WhiteDevil-Tgvc-Userbot)
 
 - Generate Pyrogram session string by running [generate-pyrogram-session-string.py](generate-pyrogram-session-string.py) by yourself or through [Replit](https://replit.com/@RYZENOPgf/generate-pyrogram-session-string?v=1)
 - Enable the worker after deploy the project to Heroku
