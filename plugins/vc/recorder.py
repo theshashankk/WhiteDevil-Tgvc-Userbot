@@ -8,8 +8,8 @@ Dependencies:
 Requirements (pip):
 - ffmpeg-python
 
-Start the userbot and send !record to a voice chat
-enabled group chat to start recording for 30 seconds
+Sᴛᴀʀᴛ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴀɴᴅ sᴇɴᴅ !record ᴛᴏ ᴀ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ
+ᴇɴᴀʙʟᴇᴅ ɢʀᴏᴜᴘ ᴄʜᴀᴛ ᴛᴏ sᴛᴀʀᴛ ʀᴇᴄᴏʀᴅɪɴɢ ғᴏʀ 30 sᴇᴄᴏɴᴅs
 """
 import os
 import asyncio
@@ -51,13 +51,13 @@ async def record_and_send_opus():
     client = group_call.client
     chat_id = int("-100" + str(group_call.full_chat.id))
     chat = await client.get_chat(chat_id)
-    status = await client.send_message(chat_id, "1/3 Recording...")
+    status = await client.send_message(chat_id, "1/3 Rᴇᴄᴏʀᴅɪɴɢ...")
     utcnow_unix, utcnow_readable = await get_utcnow()
     record_raw, record_opus = f"{utcnow_unix}.raw", f"{utcnow_unix}.opus"
     group_call.output_filename = record_raw
     await asyncio.sleep(30)
     group_call.output_filename = ''
-    await status.edit_text("2/3 Transcoding...")
+    await status.edit_text("2/3 Tʀᴀɴsᴄᴏᴅɪɴɢ...")
     ffmpeg.input(
         record_raw,
         format='s16le',
