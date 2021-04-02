@@ -1,4 +1,4 @@
-# Telegram Voice Chat UserBot BY [《@Rishi2OP》](https://t.me/theshashank)
+# Telegram Voice Chat UserBot BY [《TheShashank》](https://telegra.ph/file/10d279ab911d397276ae5.jpg)
 A Telegram UserBot to Play Audio in Voice Chats.
 
 This is also the source code of the userbot which is being used for playing DJ/Live Sets music in [VC DJ/Live Sets](https://t.me/ERROR_Zs) group.
