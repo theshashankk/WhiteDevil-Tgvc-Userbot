@@ -5,7 +5,7 @@ This is also the source code of the userbot which is being used for playing DJ/L
 
 Made with [tgcalls](https://github.com/MarshalX/tgcalls) and [Pyrogram Smart Plugin](https://docs.pyrogram.org/topics/smart-plugins)
 
-It's recommended to use [tgmusicbot](https://github.com/callsmusic/tgmusicbot) along with this userbot.
+It's recommended to use [tgmusicbot](https://github.com/RYZENOP-gf/tgvc-userbot) along with this userbot.
 
 ## Deploy to Heroku
 
