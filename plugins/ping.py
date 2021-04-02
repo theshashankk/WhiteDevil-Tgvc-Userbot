@@ -45,12 +45,12 @@ async def _human_time_duration(seconds):
                    & ~filters.via_bot
                    & filters.regex("^!ping$"))
 async def ping_pong(_, m: Message):
-    """reply randirona with pong and delete both messages"""
+    """Rᴇᴘʟʏ Rᴀɴᴅɪʀᴏɴᴀ ᴡɪᴛʜ Pᴏɴɢ Aɴᴅ Dᴇʟᴇᴛᴇ Bᴏᴛʜ ᴍᴇssᴀɢᴇ"""
     start = time()
     m_reply = await m.reply_text("...")
     delta_ping = time() - start
     await m_reply.edit_text(
-        f"{emoji.ROBOT} 《ping》: `{delta_ping * 1000:.3f} ms`"
+        f"{emoji.ROBOT} 《ᴘɪɴɢ》: `{delta_ping * 1000:.3f} ms`"
     )
 
 
@@ -60,7 +60,7 @@ async def ping_pong(_, m: Message):
                    & ~filters.via_bot
                    & filters.regex("^!uptime$"))
 async def get_uptime(_, m: Message):
-    """/uptime Reply with readable uptime and ISO 8601 start time"""
+    """/Uᴘᴛɪᴍᴇ Rᴇᴘʟʏ Wɪᴛʜ Rᴇᴀᴅᴀʙʟᴇ Uᴘᴛɪᴍᴇ Aɴᴅ Isᴏ 8601 Sᴛᴀʀᴛ ᴛɪᴍᴇ"""
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
